@@ -18,8 +18,8 @@ jobs:
     - name: Checkout open-sysmon-conf
       uses: actions/checkout@v2
     
-    - name: Copy Sysmon 
-      run: cp \\live.sysinternals.com\tools\sysmon.exe .\sysmon.exe
+    - name: Download Sysmon 
+      run: Invoke-WebRequest \\live.sysinternals.com\tools\sysmon.exe -OutFile .\sysmon.exe
       shell: powershell
     
     - name: Run Sysmon 
