@@ -23,6 +23,6 @@ jobs:
       shell: powershell
     
     - name: Run Sysmon 
-      run: sysmon.exe -accepteula -i sysmonconfig-export.xml
+      run: .\sysmon.exe -accepteula -i sysmonconfig-export.xml
       shell: powershell
       
