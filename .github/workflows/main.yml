@@ -20,4 +20,5 @@ jobs:
       
     - name: Run Sysmon 
       run: \\live.sysinternals.com\tools\sysmon.exe -accepteula -i sysmonconfig-export.xml
+      shell: powershell
       
