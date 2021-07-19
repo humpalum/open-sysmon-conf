@@ -17,8 +17,12 @@ jobs:
     steps:
     - name: Checkout open-sysmon-conf
       uses: actions/checkout@v2
-      
+    
+    - name: Copy Sysmon 
+      run: cp \\live.sysinternals.com\tools\sysmon.exe .\sysmon.exe
+      shell: powershell
+    
     - name: Run Sysmon 
-      run: \\live.sysinternals.com\tools\sysmon.exe -accepteula -i sysmonconfig-export.xml
+      run: sysmon.exe -accepteula -i sysmonconfig-export.xml
       shell: powershell
       
