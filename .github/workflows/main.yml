@@ -31,7 +31,7 @@ jobs:
       shell: powershell
 
     - name: Install some Choco Packages
-      run: choco install ninja adobereader googlechrome flashplayerplugin firefox jre8 notepadplusplus.install vcredist140 kb3035131 7zip.install vlc python3 dotnetfx adobeair openssh winrar nodejs.install foxitreader autohotkey.portable putty.install skype ccleaner winlogbeat gimp
+      run: choco install ninja adobereader googlechrome firefox jre8 notepadplusplus.install vlc python3 dotnetfx openssh winrar nodejs.install foxitreader autohotkey.portable putty.install skype ccleaner winlogbeat gimp
     
     - name: Check Eventcount Post Choco
       run:  '$EventCount = 0 ;Get-WinEvent -ListLog * | where {$_.RecordCount -gt 0} | foreach{$_;$EventCount = $EventCount + $_.RecordCount}|Out-Null;"Eventcount: "+$EventCount; if ($EventCount -gt 56000){ Write-Output "Too many events"; $host.SetShouldExit(1)}'
